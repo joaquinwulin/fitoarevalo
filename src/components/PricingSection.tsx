@@ -1,5 +1,4 @@
 import { CheckCircle2, Zap, Shield, Clock } from "lucide-react";
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -12,8 +11,6 @@ const features = [
 ];
 
 const PricingSection = () => {
-  const [isAnnual, setIsAnnual] = useState(true);
-
   return (
     <section id="pricing" className="section-spacing bg-background">
       <div className="section-container">
@@ -37,46 +34,15 @@ const PricingSection = () => {
             <CardContent className="p-8 md:p-10">
               <div className="flex items-start justify-between mb-6">
                 <Zap className="h-7 w-7 text-primary" />
-                <div className="flex items-center gap-2">
-                  <Button
-                    variant={!isAnnual ? "default" : "outline"}
-                    size="sm"
-                    className="rounded-full text-xs h-7"
-                    onClick={() => setIsAnnual(false)}
-                  >
-                    Mensual
-                  </Button>
-                  <Button
-                    variant={isAnnual ? "default" : "outline"}
-                    size="sm"
-                    className="rounded-full text-xs h-7"
-                    onClick={() => setIsAnnual(true)}
-                  >
-                    Anual
-                  </Button>
-                </div>
               </div>
 
               <div className="flex items-center gap-3 mb-6">
                 <p className="text-primary font-bold text-xl">Cuota Fija</p>
-                {isAnnual && (
-                  <Badge className="bg-primary/15 text-primary hover:bg-primary/15">
-                    Ahorras 120€ al año
-                  </Badge>
-                )}
               </div>
 
               <p className="text-5xl md:text-6xl font-extrabold text-foreground mb-4">
-                {isAnnual && (
-                  <span className="text-3xl md:text-4xl font-bold text-muted-foreground line-through mr-3">
-                    50€
-                  </span>
-                )}
-                {isAnnual ? "40€" : "50€"}
+                50€
                 <span className="text-lg font-normal text-muted-foreground">/mes</span>
-              </p>
-              <p className="text-muted-foreground text-sm mb-2">
-                {isAnnual ? "Facturado anualmente (480€/año)" : ""}
               </p>
 
               <Badge variant="destructive" className="bg-destructive/10 text-destructive border border-destructive/30 hover:bg-destructive/10 mb-8">
