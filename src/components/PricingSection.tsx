@@ -41,7 +41,7 @@ const PricingSection = () => {
               </div>
 
               <p className="text-5xl md:text-6xl font-extrabold text-foreground mb-4">
-                50€
+                500€
                 <span className="text-lg font-normal text-muted-foreground">/mes</span>
               </p>
 
